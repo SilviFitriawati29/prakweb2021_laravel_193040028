@@ -26,9 +26,11 @@ Route::get('/about', function () {
     return view('about', [
         "title" => "About",
         "name" => "Silvi Fitriawati",
-
+        "email" => "Silvifitriawati29@gmail.com",
+        "image" => "foto.jpg"
     ]);
 });
+
 
 Route::get('/blog', [PostController::class, 'index']);
 
