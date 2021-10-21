@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Routing\Router;
 
 use App\Models\Category;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,5 +49,12 @@ Route::get('/categories/{category:slug}', function (category $category) {
         'title' => $category->name,
         'posts' => $category->posts,
         'category' => $category->name
+    ]);
+});
+
+Route::get('/authors/{author:username}', function (User $author) {
+    return view('posts', [
+        'title' => 'User Posts',
+        'posts' => $author->posts,
     ]);
 });
